@@ -7,5 +7,10 @@ DROP TABLE IF EXISTS test;
 
 CREATE TABLE test (
     id SERIAL PRIMARY KEY, 
-    name TEXT
+    name TEXT REQUIRED,
+    description TEXT,
+    price DECIMAL(10,2),
+    rating TINYINT check (rating>=0 and rating<=5),
+    featured BOOLEAN,
+    image TEXT
 );
