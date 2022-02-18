@@ -21,7 +21,14 @@ true,
 4.7,
 true,
 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6439/6439402cv11d.jpg;maxHeight=640;maxWidth=550',
-5);
+5),
+('ASUS GeForce GTX 1050 Ti 4GB Phoenix Fan Edition DVI-D HDMI DP 1.4 Gaming Graphics Card (PH-GTX1050TI-4G) Graphic Cards',
+'The GeForce GTX 1050 graphics card is loaded with innovative new gaming technologies, making it the perfect choice for the latest high-definition games. Powered by NVIDIA Pascal ™—the most advanced GPU architecture ever created—the GeForce GTX 1060 delivers brilliant performance that opens the door to virtual reality and beyond. #GameReady.',
+279.95,
+3.4,
+false,
+'https://m.media-amazon.com/images/I/71eoMkl0sFL._AC_SY450_.jpg',
+8);
 
 INSERT INTO users (username, email, password, admin) VALUES
 ('bennyz',

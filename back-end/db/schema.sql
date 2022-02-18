@@ -3,7 +3,7 @@ CREATE DATABASE cta_dev;
 
 \c cta_dev;
 
-DROP TABLE IF EXISTS test;
+DROP TABLE IF EXISTS products, users, transactions;
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY, 
