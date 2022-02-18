@@ -27,6 +27,7 @@ const getFeatured = async () => {
   }
 };
 
+// Admin Only Functions
 const newProduct = async (product) => {
   let { name, description, price, rating, featured, image, inventory } =
     product;
@@ -48,4 +49,39 @@ const newProduct = async (product) => {
   } catch (error) {
     return error;
   }
+};
+
+const deleteProduct = async (id) => {
+  try {
+    const deletedProduct = db.one(
+      "DELETE FROM products WHERE id=$1 RETURNING *",
+      id
+    );
+    return deletedProduct;
+  } catch (error) {
+    return error;
+  }
+};
+
+const updateProduct = async (id, product) => {
+  try {
+    let { name, description, price, rating, featured, image, inventory } =
+      product;
+    const updatedProduct = await db.one(
+      "UPDATE products SET name=$1, description=$2, price=$3, rating=$4, featured=$5, image=$6, inventory=$7 WHERE id=$8 RETURNING *",
+      [name, description, price, rating, featured, image, inventory, id]
+    );
+    return updatedProduct;
+  } catch (error) {
+    return error;
+  }
+};
+
+module.exports = {
+  getAllProducts,
+  getFeatured,
+  getProduct,
+  newProduct,
+  deleteProduct,
+  updateProduct,
 };

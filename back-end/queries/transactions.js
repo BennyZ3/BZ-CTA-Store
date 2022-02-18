@@ -35,3 +35,8 @@ const addToCart = async (username, productID, quantity) => {
     return error;
   }
 };
+
+module.exports = {
+  newTransaction,
+  addToCart,
+};

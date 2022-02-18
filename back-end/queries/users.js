@@ -37,3 +37,9 @@ const getOrderHistory = async (username) => {
     return error;
   }
 };
+
+module.exports = {
+  getUser,
+  getUserCart,
+  getOrderHistory,
+};
