@@ -24,3 +24,15 @@ const getUserCart = async (username) => {
     return error;
   }
 };
+
+const getOrderHistory = async (username) => {
+  try {
+    const history = await db.any(
+      "SELECT * FROM transactions INNER JOIN products ON (transactions.product_id = products.id) WHERE user_id = '$1' AND transaction_complete = true",
+      username
+    );
+    return history;
+  } catch (error) {
+    return error;
+  }
+};
