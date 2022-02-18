@@ -27,6 +27,7 @@ const getUserCart = async (username) => {
 
 const getOrderHistory = async (username) => {
   try {
+    //maybe change from * to specific columns at some point
     const history = await db.any(
       "SELECT * FROM transactions INNER JOIN products ON (transactions.product_id = products.id) WHERE user_id = '$1' AND transaction_complete = true",
       username

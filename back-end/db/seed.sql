@@ -33,9 +33,9 @@ true),
 'test', 
 false);
 
-INSERT INTO transactions (user_id, product_id, transaction_complete) VALUES
-('bennyz', 1, true),
-('bennyz', 2, false),
-('test', 1, false),
-('test', 2, true),
-('test', 3, false);
+INSERT INTO transactions (user_id, product_id, transaction_complete, date) VALUES
+('bennyz', 1, true,'2022-02-01'),
+('bennyz', 2, false,'2022-02-07'),
+('test', 1, false,'2022-01-28'),
+('test', 2, true,'2022-02-01'),
+('test', 3, false,'2022-02-10');
