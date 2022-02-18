@@ -1,3 +1,7 @@
+BZ-CTA-Store
+[Front End deploy](https://bz-cta-store-front.netlify.app/)
+[Back End deploy](https://bz-cta-store-back.herokuapp.com/)
+
 # PERN Final Project Template
 
 - select `use this template`
