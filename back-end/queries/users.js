@@ -4,7 +4,20 @@ const getUser = async (username) => {
   // Validate in controller
   try {
     const userInfo = await db.one(
-      "SELECT * FROM users WHERE username='$1'",
+      "SELECT * FROM users WHERE username=$1",
+      username
+    );
+    return userInfo;
+  } catch (error) {
+    return error;
+  }
+};
+
+const getAdmin = async (username) => {
+  // Validate in controller
+  try {
+    const userInfo = await db.one(
+      "SELECT admin FROM users WHERE username=$1",
       username
     );
     return userInfo;
@@ -42,4 +55,5 @@ module.exports = {
   getUser,
   getUserCart,
   getOrderHistory,
+  getAdmin,
 };

@@ -16,7 +16,9 @@ app.get("/", (req, res) => {
 });
 
 const productsController = require("./controllers/productsController");
+const usersController = require("./controllers/usersController");
 app.use("/products", productsController);
+app.use("/users", usersController);
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
 /////////////////////////////////////
