@@ -45,6 +45,9 @@ const Details = () => {
       <Link to={`/products`}>
         <button>Back</button>
       </Link>
+      <Link to={`/products/${params.id}/edit`}>
+        <button>Edit</button>
+      </Link>
     </div>
   );
 };

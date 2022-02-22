@@ -11,8 +11,10 @@ import NavBar from "./Components/NavBar";
 import Login from "./Pages/Login";
 
 function App() {
-  document.cookie = document.cookie ? document.cookie : "username=";
-  // console.log(document.cookie);
+  // document.cookie = document.cookie.split("=")[1]
+  //   ? document.cookie
+  //   : "username=";
+  console.log(document.cookie);
   return (
     <div className="App">
       <BrowserRouter>
