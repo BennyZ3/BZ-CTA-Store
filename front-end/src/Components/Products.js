@@ -8,7 +8,6 @@ function Products(props) {
     ? API + "/products/featured"
     : API + "/products";
   const [products, setProducts] = useState([]);
-  console.log(callAPI, props.featured);
   useEffect(async () => {
     await axios
       .get(`${callAPI}`)
@@ -20,6 +19,7 @@ function Products(props) {
       <table>
         <thead>
           <tr>
+            <th>Image</th>
             <th>Name</th>
             <th>Price</th>
             <th>Rating</th>

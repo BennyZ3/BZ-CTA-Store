@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Pages
@@ -9,29 +7,20 @@ import Details from "./Pages/Details";
 import New from "./Pages/New";
 import Edit from "./Pages/Edit";
 import PageNotFound from "./Pages/PageNotFound";
+import NavBar from "./Components/NavBar";
+import Login from "./Pages/Login";
 
-const API = process.env.REACT_APP_API_URL;
-
-// console.log(API);
 function App() {
-  //   const [days, setDays] = useState([]);
-  //   useEffect(() => {
-  //     axios
-  //       .get(`${API}/test`)
-  //       .then(
-  //         (response) => {
-  //           setDays(response.data);
-  //         },
-  //         (error) => console.log("get", error)
-  //       )
-  //       .catch((c) => console.warn("catch", c));
-  //   }, []);
+  document.cookie = document.cookie ? document.cookie : "username=";
+  // console.log(document.cookie);
   return (
     <div className="App">
       <BrowserRouter>
+        <NavBar />
         <main>
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/products" element={<AllProducts />} />
             <Route path="/products/:id" element={<Details />} />
             <Route path="/products/new" element={<New />} />
@@ -40,11 +29,6 @@ function App() {
           </Routes>
         </main>
       </BrowserRouter>
-      {/* <ul>
-        {days.map((day) => (
-          <li key={day.name}>{day.name}</li>
-        ))}
-      </ul> */}
     </div>
   );
 }

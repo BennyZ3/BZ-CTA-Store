@@ -4,7 +4,10 @@ function Product({ product }) {
   return (
     <tr className="Product">
       <td>
-        <Link to={`/prodcuts/${product.id}`}>
+        <img className="thumbs" src={`${product.image}`} />
+      </td>
+      <td>
+        <Link to={`/products/${product.id}`}>
           <h4>{product.name}</h4>
         </Link>
       </td>
