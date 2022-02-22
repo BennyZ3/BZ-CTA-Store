@@ -3,7 +3,7 @@ CREATE DATABASE cta_dev;
 
 \c cta_dev;
 
-DROP TABLE IF EXISTS test;
+DROP TABLE IF EXISTS products, users, transactions;
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY, 
@@ -28,6 +28,7 @@ CREATE TABLE transactions (
     transact_id SERIAL PRIMARY KEY,
     user_id TEXT,
     product_id INT,
+    date DATE,
     transaction_complete BOOLEAN,
     FOREIGN KEY (user_id) REFERENCES users(username),
     FOREIGN KEY (product_id) REFERENCES products(id)
