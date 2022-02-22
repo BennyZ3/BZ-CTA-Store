@@ -1,5 +1,6 @@
 // DEPENDENCIES
 const cors = require("cors");
+const { response } = require("express");
 const express = require("express");
 
 // CONFIGURATION
@@ -14,6 +15,8 @@ app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
 
+const productsController = require("./controllers/productsController");
+app.use("/products", productsController);
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
 /////////////////////////////////////
