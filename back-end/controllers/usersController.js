@@ -5,9 +5,10 @@ const { getUser, getAdmin } = require("../queries/users");
 const users = express.Router();
 
 users.get("/", async (request, response) => {
-  console.log(request.body.username);
+  console.log(`Login check for ${request.body.username}`);
   //login
   const userInfo = await getUser(request.body.username);
+  //   console.log(userInfo.password);
   if (request.body.password === userInfo.password) {
     response
       .status(200)
