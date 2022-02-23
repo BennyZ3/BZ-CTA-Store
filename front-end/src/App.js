@@ -8,13 +8,24 @@ import New from "./Pages/New";
 import Edit from "./Pages/Edit";
 import PageNotFound from "./Pages/PageNotFound";
 import NavBar from "./Components/NavBar";
-import Login from "./Pages/Login";
+import Login from "./Components/Login";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
   // document.cookie = document.cookie.split("=")[1]
   //   ? document.cookie
   //   : "username=";
-  console.log(document.cookie);
+  const API = process.env.REACT_APP_API_URL;
+  const [admin, setAdmin] = useState({});
+  useEffect(async () => {
+    await axios
+      .post(`${API}/users/admin`, { username: document.split("=")[1] })
+      .then((response) => {
+        setAdmin(response.data.payload);
+        console.log(document.cookie, admin);
+      });
+  }, [API]);
   return (
     <div className="App">
       <BrowserRouter>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Login from "./Login";
 
 function NavBar() {
   const [user, setUser] = useState({});
@@ -27,9 +28,9 @@ function NavBar() {
           {user.username ? (
             <div onClick={handleLogout}>Logout</div>
           ) : (
-            <Link to="/login">
-              <div>Login</div>
-            </Link>
+            <div>
+              <Login />
+            </div>
           )}
         </div>
       </div>
