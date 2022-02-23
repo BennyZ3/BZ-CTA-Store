@@ -8,12 +8,12 @@ function Products(props) {
     ? API + "/products/featured"
     : API + "/products";
   const [products, setProducts] = useState([]);
-  useEffect(async () => {
-    await axios
+  useEffect(() => {
+    axios
       .get(`${callAPI}`)
       .then((response) => setProducts(response.data.payload))
       .catch((error) => console.warn(error));
-  }, [API]);
+  }, [callAPI]);
   return (
     <div className="Products">
       <table>

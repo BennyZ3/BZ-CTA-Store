@@ -11,22 +11,17 @@ import NavBar from "./Components/NavBar";
 import Login from "./Components/Login";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Cart from "./Components/Cart";
 import CartPage from "./Pages/CartPage";
 
 function App() {
-  // document.cookie = document.cookie.split("=")[1]
-  //   ? document.cookie
-  //   : "username=";
   console.log(document.cookie);
   const API = process.env.REACT_APP_API_URL;
   const [admin, setAdmin] = useState({});
-  useEffect(async () => {
-    await axios
+  useEffect(() => {
+    axios
       .post(`${API}/users/admin`, { username: document.cookie.split("=")[1] })
       .then((response) => {
         setAdmin(response.data.payload);
-        // console.log(document.cookie, admin);
       });
   }, [API]);
   return (

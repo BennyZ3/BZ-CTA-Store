@@ -1,5 +1,4 @@
-import { Link, Navigate } from "react-router-dom";
-import Product from "../Components/Product";
+import { Link } from "react-router-dom";
 
 const { default: axios } = require("axios");
 const { useEffect, useState } = require("react");
@@ -7,15 +6,15 @@ const { useEffect, useState } = require("react");
 const CartPage = () => {
   const API = process.env.REACT_APP_API_URL;
   const [cart, setCart] = useState([]);
-  useEffect(async () => {
-    await axios
+  useEffect(() => {
+    axios
       .post(`${API}/users/cart`, {
         username: document.cookie.split("=")[1],
       })
       .then((response) => {
         setCart(response.data.payload);
       });
-  }, [document.cookie]);
+  }, [API]);
   const handleDelete = (event) => {
     // console.log(event.target.value);
     axios.delete(`${API}/transactions/${event.target.value}`).then(
@@ -49,7 +48,11 @@ const CartPage = () => {
             return (
               <tr>
                 <td>
-                  <img className="thumbs" src={`${product.image}`} />
+                  <img
+                    className="thumbs"
+                    src={`${product.image}`}
+                    alt="thumbnail"
+                  />
                 </td>
                 <td>
                   <Link to={`/products/${product.id}`}>
