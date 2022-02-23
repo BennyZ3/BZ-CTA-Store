@@ -12,6 +12,7 @@ import Login from "./Components/Login";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CartPage from "./Pages/CartPage";
+import RegistrationForm from "./Components/RegistrationForm";
 
 function App() {
   console.log(document.cookie);
@@ -37,6 +38,7 @@ function App() {
             <Route path="/products/new" element={<New />} />
             <Route path="/products/:id/edit" element={<Edit />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/register" element={<RegistrationForm />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
