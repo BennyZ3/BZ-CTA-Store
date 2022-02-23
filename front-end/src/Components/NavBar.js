@@ -6,9 +6,9 @@ import "./Nav.css";
 
 function NavBar() {
   const [user, setUser] = useState({});
-  useEffect(async () => {
-    await setUser({ username: document.cookie.split("=")[1] });
-  }, [document.cookie]);
+  useEffect(() => {
+    setUser({ username: document.cookie.split("=")[1] });
+  }, []);
   const handleLogout = () => {
     console.log("logout", document.cookie);
     document.cookie = "username=";

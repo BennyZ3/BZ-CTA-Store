@@ -25,7 +25,7 @@ const Form = (props) => {
     } else {
       setProduct({ ...product });
     }
-  }, [API, id, edit]);
+  }, [API, id, edit, product]);
 
   const handleChange = (event) => {
     if (event.target.id === "featured") {

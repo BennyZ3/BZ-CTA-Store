@@ -42,7 +42,7 @@ const Details = (props) => {
   return (
     <div className="Details">
       Details
-      <img className="displayImg" src={product.image} />
+      <img className="displayImg" src={product.image} alt="img" />
       <div>
         <strong>Name:</strong> {product.name}
       </div>
@@ -60,9 +60,12 @@ const Details = (props) => {
         <button>Back</button>
       </Link>
       {props.admin.admin && (
-        <Link to={`/products/${params.id}/edit`}>
-          <button>Edit</button>
-        </Link>
+        <>
+          <Link to={`/products/${params.id}/edit`}>
+            <button>Edit</button>
+          </Link>
+          <button onClick={handleDelete}>DELETE</button>
+        </>
       )}
     </div>
   );
