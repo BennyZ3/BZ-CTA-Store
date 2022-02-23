@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const API = process.env.REACT_APP_API_URL;
@@ -9,16 +10,19 @@ const Login = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await axios.post(`${API}/users`, user).then((response) => {
-      if (response.data.success) {
-        console.log("success");
-        document.cookie = `username=${user.username}`;
-        window.location.reload(true);
-      } else {
-        console.log("fail");
-        alert("Invalid username of password");
-      }
-    });
+    await axios
+      .post(`${API}/users`, user)
+      .then((response) => {
+        if (response.data.success) {
+          // console.log("success");
+          document.cookie = `username=${user.username}`;
+          window.location.reload(true);
+        } else {
+          // console.log("fail");
+          alert("Invalid username of password");
+        }
+      })
+      .catch((error) => alert("Invalid username of password"));
   };
   return (
     <div className="Login">
@@ -43,7 +47,12 @@ const Login = () => {
             onChange={handleChange}
           ></input>
         </div>
-        <button type="submit">Login</button>
+        <div className="loginButtons">
+          <button type="submit">Login</button>
+          <Link to={`/register`}>
+            <button>Register</button>
+          </Link>
+        </div>
       </form>
     </div>
   );

@@ -8,6 +8,7 @@ const Details = (props) => {
   const [product, setProduct] = useState([]);
   const params = useParams();
   const navigate = useNavigate();
+  const user = document.cookie.split("=")[1];
   // console.log(props.admin.admin);
   useEffect(() => {
     axios
@@ -19,7 +20,7 @@ const Details = (props) => {
   const handleAddToCart = () => {
     axios
       .post(`${API}/transactions/add`, {
-        username: document.cookie.split("=")[1],
+        username: user,
         product_id: params.id,
       })
       .then(() => {
@@ -55,7 +56,7 @@ const Details = (props) => {
       <div>
         <strong>Inventory:</strong> {product.inventory}
       </div>
-      <button onClick={handleAddToCart}>Add to Cart</button>
+      {user && <button onClick={handleAddToCart}>Add to Cart</button>}
       <Link to={`/products`}>
         <button>Back</button>
       </Link>
