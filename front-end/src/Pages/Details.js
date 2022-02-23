@@ -17,7 +17,16 @@ const Details = () => {
   }, [API, params.id]);
 
   const handleAddToCart = () => {
-    //   axios;
+    axios
+      .post(`${API}/transactions/add`, {
+        username: document.cookie.split("=")[1],
+        product_id: params.id,
+      })
+      .then(() => {
+        navigate("/cart");
+        //window reload to update navbar info
+        window.location.reload(false);
+      });
   };
 
   //admin only

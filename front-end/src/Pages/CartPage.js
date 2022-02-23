@@ -16,6 +16,11 @@ const CartPage = () => {
         setCart(response.data.payload);
       });
   }, [document.cookie]);
+  const handleDelete = (event) => {
+    console.log(event.target.value);
+    // axios.delete(`${API}/transactions/`)
+  };
+
   let cartTotal = 0;
   return (
     <div>
@@ -27,6 +32,7 @@ const CartPage = () => {
             <th>Price</th>
             <th>Rating</th>
             <th>In Stock</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +53,11 @@ const CartPage = () => {
                 <td>{product.price}</td>
                 <td>{product.rating}</td>
                 <td>{product.inventory > 0 ? "yes" : "no"}</td>
+                <td>
+                  <button onClick={handleDelete} value={product.transact_id}>
+                    Remove from Cart
+                  </button>
+                </td>
               </tr>
             );
           })}
