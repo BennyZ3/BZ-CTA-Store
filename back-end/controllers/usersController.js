@@ -22,7 +22,7 @@ users.get("/", async (request, response) => {
 
 users.get("/admin", async (request, response) => {
   //check admin
-  const userAdmin = getAdmin(request.body.username);
+  const userAdmin = await getAdmin(request.body.username);
   console.log(userAdmin);
   response.status(200).json({ success: true, payload: userAdmin });
 });
