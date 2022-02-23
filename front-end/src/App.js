@@ -26,7 +26,7 @@ function App() {
       .post(`${API}/users/admin`, { username: document.cookie.split("=")[1] })
       .then((response) => {
         setAdmin(response.data.payload);
-        console.log(document.cookie, admin);
+        // console.log(document.cookie, admin);
       });
   }, [API]);
   return (
@@ -38,7 +38,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/products" element={<AllProducts />} />
-            <Route path="/products/:id" element={<Details />} />
+            <Route path="/products/:id" element={<Details admin={admin} />} />
             <Route path="/products/new" element={<New />} />
             <Route path="/products/:id/edit" element={<Edit />} />
             <Route path="/cart" element={<CartPage />} />

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Product from "../Components/Product";
 
 const { default: axios } = require("axios");
@@ -17,8 +17,14 @@ const CartPage = () => {
       });
   }, [document.cookie]);
   const handleDelete = (event) => {
-    console.log(event.target.value);
-    // axios.delete(`${API}/transactions/`)
+    // console.log(event.target.value);
+    axios.delete(`${API}/transactions/${event.target.value}`).then(
+      () => {
+        console.log(`deleted transaction ${event.target.value}`);
+        window.location.reload(true);
+      },
+      (error) => console.warn(error)
+    );
   };
 
   let cartTotal = 0;

@@ -3,12 +3,12 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Details.css";
 
-const Details = () => {
+const Details = (props) => {
   const API = process.env.REACT_APP_API_URL;
   const [product, setProduct] = useState([]);
   const params = useParams();
   const navigate = useNavigate();
-
+  // console.log(props.admin.admin);
   useEffect(() => {
     axios
       .get(`${API}/products/${params.id}`)
@@ -59,9 +59,11 @@ const Details = () => {
       <Link to={`/products`}>
         <button>Back</button>
       </Link>
-      <Link to={`/products/${params.id}/edit`}>
-        <button>Edit</button>
-      </Link>
+      {props.admin.admin && (
+        <Link to={`/products/${params.id}/edit`}>
+          <button>Edit</button>
+        </Link>
+      )}
     </div>
   );
 };
