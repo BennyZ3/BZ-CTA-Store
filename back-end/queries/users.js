@@ -27,7 +27,7 @@ const getAdmin = async (username) => {
 };
 
 const getUserCart = async (username) => {
-  console.log(username);
+  // console.log(username);
   try {
     // const cart = await db.any(
     //   "SELECT * FROM transactions INNER JOIN products ON (transactions.product_id = products.id) WHERE user_id ='$1' AND transaction_complete = false",

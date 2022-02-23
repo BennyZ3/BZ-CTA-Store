@@ -16,6 +16,10 @@ const Details = () => {
       .catch((error) => console.warn(error));
   }, [API, params.id]);
 
+  const handleAddToCart = () => {
+    //   axios;
+  };
+
   //admin only
   const handleDelete = () => {
     axios.delete(`${API}/products/${params.id}`).then(
@@ -42,6 +46,7 @@ const Details = () => {
       <div>
         <strong>Inventory:</strong> {product.inventory}
       </div>
+      <button onClick={handleAddToCart}>Add to Cart</button>
       <Link to={`/products`}>
         <button>Back</button>
       </Link>

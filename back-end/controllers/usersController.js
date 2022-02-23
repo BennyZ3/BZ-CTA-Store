@@ -34,7 +34,7 @@ users.post("/admin", async (request, response) => {
 users.post("/cart", async (request, response) => {
   console.log(`cart info for user ${request.body.username}`);
   const cart = await getUserCart(request.body.username);
-  console.log("cartinfo", cart);
+  //   console.log("cartinfo", cart);
   response.status(200).json({
     success: true,
     payload: cart.filter((item) => item.user_id === request.body.username),

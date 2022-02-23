@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Login from "./Login";
 import Cart from "./Cart";
+import "./Nav.css";
 
 function NavBar() {
   const [user, setUser] = useState({});
@@ -24,20 +25,16 @@ function NavBar() {
       </Link>
       {/* Login /register*/}
       <div className="navUser">
-        <div>
-          {user.username ? (
-            <>
-              {user.username}
-              <div onClick={handleLogout}>Logout</div>
-              {/* Cart if login */}
-              <Cart nav={true} username={user.username} />
-            </>
-          ) : (
-            <div>
-              <Login />
-            </div>
-          )}
-        </div>
+        {user.username ? (
+          <>
+            User: {user.username}
+            <div onClick={handleLogout}>Logout</div>
+            {/* Cart if login */}
+            <Cart nav={true} username={user.username} />
+          </>
+        ) : (
+          <Login />
+        )}
       </div>
     </nav>
   );

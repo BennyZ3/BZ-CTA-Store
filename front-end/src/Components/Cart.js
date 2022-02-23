@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+// import Product from "./Product";
+
 const { default: axios } = require("axios");
 const { useEffect, useState } = require("react");
 
@@ -13,9 +16,32 @@ const Cart = (props) => {
       .then((response) => {
         setCart(response.data.payload);
       });
-  });
+  }, [props]);
   return (
-    <div>{props.nav ? <p>{cart.length} </p> : <>{console.log(cart)}</>}</div>
+    <div>
+      {/* {props.nav ? ( */}
+      <Link to="/cart">
+        <p>Cart: {cart.length} </p>
+      </Link>
+      {/* //   ) : (
+        //       <table>
+        //           <thead>
+        //               <tr>
+        //                   <th>Image</th>
+        //                   <th>Name</th>
+        //                   <th>Price</th>
+        //                   <th>Rating</th>
+        //                   <th>In Stock</th>
+        //               </tr>
+        //           </thead>
+        //           <tbody>
+        //               {cart.map((product) => {
+        //                   return <Product key={product.id} product={product} />;
+        //               })}
+        //           </tbody>
+        //       </table>
+        //   )} */}
+    </div>
   );
 };
 

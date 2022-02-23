@@ -11,6 +11,8 @@ import NavBar from "./Components/NavBar";
 import Login from "./Components/Login";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Cart from "./Components/Cart";
+import CartPage from "./Pages/CartPage";
 
 function App() {
   // document.cookie = document.cookie.split("=")[1]
@@ -39,6 +41,7 @@ function App() {
             <Route path="/products/:id" element={<Details />} />
             <Route path="/products/new" element={<New />} />
             <Route path="/products/:id/edit" element={<Edit />} />
+            <Route path="/cart" element={<CartPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
