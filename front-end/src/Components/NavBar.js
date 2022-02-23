@@ -18,20 +18,32 @@ function NavBar() {
   return (
     <nav>
       <Link to="/">
-        <div>Home</div>
+        <div>
+          <h1>Home</h1>
+        </div>
       </Link>
-      <Link to="/products">
-        <div>All Items</div>
-      </Link>
+      <div className="navProducts">
+        <Link to="/products">
+          <div>
+            <h1>All Items</h1>
+          </div>
+        </Link>
+        <Link to="/products/new">
+          <div>
+            <button>New Item</button>
+          </div>
+        </Link>
+      </div>
       {/* Login /register*/}
       <div className="navUser">
         {user.username ? (
-          <>
-            User: {user.username}
-            <div onClick={handleLogout}>Logout</div>
-            {/* Cart if login */}
+          <div>
+            <h4>User: {user.username}</h4>
+            <button className="logout" onClick={handleLogout}>
+              Logout
+            </button>
             <Cart nav={true} username={user.username} />
-          </>
+          </div>
         ) : (
           <Login />
         )}

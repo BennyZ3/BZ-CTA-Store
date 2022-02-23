@@ -1,3 +1,7 @@
 .thumbs {
   height: 100px;
 }
+
+td {
+  border-bottom: 1px solid #44d62b;
+}

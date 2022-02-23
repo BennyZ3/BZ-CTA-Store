@@ -2,7 +2,11 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   height: 100px;
-  border: 1px solid blue;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #44d62b;
+  padding-bottom: 15px;
+  /* padding-top: 15px; */
+  margin-bottom: 10px;
 }
 
 nav div {
@@ -11,10 +15,12 @@ nav div {
   height: 100%;
 }
 
-a {
-  text-decoration: none;
+.navProducts {
+  height: 100%;
 }
-
+.navProducts div {
+  height: 30%;
+}
 .navUser {
   display: grid;
   grid-template-columns: 1fr;
@@ -40,4 +46,7 @@ a {
 .loginButtons {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.logout {
 }

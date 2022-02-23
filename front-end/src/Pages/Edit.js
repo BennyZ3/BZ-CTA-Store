@@ -4,7 +4,7 @@ import "./Edit.css";
 const Edit = () => {
   return (
     <div className="Edit">
-      Edit
+      <h2>Edit</h2>
       <Form edit={true} />
     </div>
   );

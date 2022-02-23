@@ -17,10 +17,22 @@ main {
   justify-content: center;
   margin-left: 7.5%;
   margin-right: 7.5%;
+  background-color: #111111;
+  height: 800px;
 }
 .App {
   justify-content: center;
+  text-align: center;
+  background-color: #252525;
+  color: #44d62b;
 }
-div {
+a {
+  text-decoration: none;
+  color: #44d62b;
+}
+button {
+  width: 150px;
+}
+/* div {
   border: 1px solid black;
-}
+} */

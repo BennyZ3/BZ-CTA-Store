@@ -4,7 +4,6 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="Home">
-      Homepage
       <Products featured={true} />
     </div>
   );
