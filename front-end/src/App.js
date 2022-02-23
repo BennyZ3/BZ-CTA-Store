@@ -16,11 +16,12 @@ function App() {
   // document.cookie = document.cookie.split("=")[1]
   //   ? document.cookie
   //   : "username=";
+  console.log(document.cookie);
   const API = process.env.REACT_APP_API_URL;
   const [admin, setAdmin] = useState({});
   useEffect(async () => {
     await axios
-      .post(`${API}/users/admin`, { username: document.split("=")[1] })
+      .post(`${API}/users/admin`, { username: document.cookie.split("=")[1] })
       .then((response) => {
         setAdmin(response.data.payload);
         console.log(document.cookie, admin);

@@ -27,10 +27,15 @@ const getAdmin = async (username) => {
 };
 
 const getUserCart = async (username) => {
+  console.log(username);
   try {
+    // const cart = await db.any(
+    //   "SELECT * FROM transactions INNER JOIN products ON (transactions.product_id = products.id) WHERE user_id ='$1' AND transaction_complete = false",
+    //   username
+    // );
+    // individual id filter keeps giving an error for some reason
     const cart = await db.any(
-      "SELECT * FROM transactions INNER JOIN products ON (transactions.product_id = products.id) WHERE user_id = '$1' AND transaction_complete = false",
-      username
+      "SELECT * FROM transactions INNER JOIN products ON (transactions.product_id = products.id) WHERE transaction_complete = false"
     );
     return cart;
   } catch (error) {

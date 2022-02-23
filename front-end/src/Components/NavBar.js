@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Login from "./Login";
+import Cart from "./Cart";
 
 function NavBar() {
   const [user, setUser] = useState({});
@@ -24,9 +25,13 @@ function NavBar() {
       {/* Login /register*/}
       <div className="navUser">
         <div>
-          {user.username}
           {user.username ? (
-            <div onClick={handleLogout}>Logout</div>
+            <>
+              {user.username}
+              <div onClick={handleLogout}>Logout</div>
+              {/* Cart if login */}
+              <Cart nav={true} username={user.username} />
+            </>
           ) : (
             <div>
               <Login />
@@ -34,7 +39,6 @@ function NavBar() {
           )}
         </div>
       </div>
-      {/* Cart if login */}
     </nav>
   );
 }
