@@ -56,9 +56,23 @@ const getOrderHistory = async (username) => {
   }
 };
 
+const registerUser = async (body) => {
+  let { username, email, password } = body;
+  try {
+    const newUser = await db.one(
+      "INSERT INTO users (username, email, password, admin) VALUES ($1,$2,$3,$4) RETURNING *",
+      [username, email, password, false]
+    );
+    return newUser;
+  } catch (error) {
+    return error;
+  }
+};
+
 module.exports = {
   getUser,
   getUserCart,
   getOrderHistory,
   getAdmin,
+  registerUser,
 };

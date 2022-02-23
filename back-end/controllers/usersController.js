@@ -1,6 +1,11 @@
 const { response } = require("express");
 const express = require("express");
-const { getUser, getAdmin, getUserCart } = require("../queries/users");
+const {
+  getUser,
+  getAdmin,
+  getUserCart,
+  registerUser,
+} = require("../queries/users");
 
 const users = express.Router();
 
@@ -39,6 +44,25 @@ users.post("/cart", async (request, response) => {
     success: true,
     payload: cart.filter((item) => item.user_id === request.body.username),
   });
+});
+
+users.post("/new", async (request, response) => {
+  console.log(request.body);
+  const usernameCheck = await getUser(request.body.username);
+  console.log(usernameCheck.received);
+  if (!usernameCheck.received) {
+    const newUser = await registerUser(request.body);
+    console.log(newUser);
+    if (newUser.username) {
+      response.status(200).json({ success: true, payload: newUser });
+    } else {
+      response
+        .status(400)
+        .json({ success: false, payload: "username not available" });
+    }
+  } else {
+    response.status(400)({ success: false, payload: "username not available" });
+  }
 });
 
 module.exports = users;
