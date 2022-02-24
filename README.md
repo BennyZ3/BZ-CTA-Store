@@ -10,6 +10,7 @@
 - test
   - test
 - or make one
+  - No permissions allowed to make an admin account from the front-end 
 
 ## Features locked behind logging in
 
