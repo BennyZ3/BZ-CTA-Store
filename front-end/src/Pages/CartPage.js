@@ -28,7 +28,7 @@ const CartPage = () => {
 
   let cartTotal = 0;
   return (
-    <div>
+    <div className="cartPage">
       <table>
         <thead>
           <tr>
@@ -72,7 +72,7 @@ const CartPage = () => {
           })}
         </tbody>
       </table>
-      <p>Total: {cartTotal}</p>
+      <h2>Total: {cartTotal}</h2>
     </div>
   );
 };

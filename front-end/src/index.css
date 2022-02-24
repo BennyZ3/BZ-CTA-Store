@@ -17,10 +17,47 @@ main {
   justify-content: center;
   margin-left: 7.5%;
   margin-right: 7.5%;
+  background-color: #111111;
+  height: 800px;
 }
 .App {
   justify-content: center;
+  text-align: center;
+  background-color: #252525;
+  color: #44d62b;
 }
-div {
-  border: 1px solid black;
+a {
+  text-decoration: none;
+  color: #44d62b;
+}
+button {
+  width: 150px;
+  height: 30px;
+  border: 1px solid #44d62b;
+  background: none;
+  color: #44d62b;
+  border-radius: 5px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+h1:hover,
+h4:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+.cartPage {
+  margin-left: 40px;
+  padding-top: 30px;
+  margin-right: 40px;
+}
+
+table {
+  width: 100%;
 }
