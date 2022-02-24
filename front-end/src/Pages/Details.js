@@ -42,7 +42,6 @@ const Details = (props) => {
 
   return (
     <div className="Details">
-      Details
       <img className="displayImg" src={product.image} alt="img" />
       <div>
         <strong>Name:</strong> {product.name}

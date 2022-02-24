@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./Form.css";
 
 const Form = (props) => {
   let navigate = useNavigate();
@@ -57,7 +58,7 @@ const Form = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="productForm" onSubmit={handleSubmit}>
       <label for="name">Name:</label>
       <input
         required
