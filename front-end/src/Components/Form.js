@@ -26,6 +26,7 @@ const Form = (props) => {
     }
   }, [API, id, edit]);
 
+
   const handleChange = (event) => {
     if (event.target.id === "featured") {
       setProduct({ ...product, featured: !product.featured });
