@@ -14,3 +14,23 @@
 .productForm button {
   margin-left: 25px;
 }
+
+.registration {
+  padding-top: 50px;
+}
+
+.registrationForm {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.registrationForm input {
+  width: 300px;
+  height: 20px;
+  margin-left: 30%;
+  margin-bottom: 15px;
+}
+
+.registrationForm button {
+  margin-left: 35%;
+}
