@@ -10,9 +10,9 @@ function NavBar(props) {
     setUser({ username: document.cookie.split("=")[1] });
   }, []);
   const handleLogout = () => {
-    console.log("logout", document.cookie);
     document.cookie = "username=";
-    console.log(document.cookie);
+    console.log(document.cookie, "logged out");
+    // window reload to refresh navbar info with updated cookie
     window.location.reload(false);
   };
   return (
@@ -28,6 +28,7 @@ function NavBar(props) {
             <h1>All Items</h1>
           </div>
         </Link>
+        {/* Admin only new item button */}
         {props.admin.admin && (
           <Link to="/products/new">
             <div>

@@ -9,7 +9,6 @@ const Details = (props) => {
   const params = useParams();
   const navigate = useNavigate();
   const user = document.cookie.split("=")[1];
-  // console.log(props.admin.admin);
   useEffect(() => {
     axios
       .get(`${API}/products/${params.id}`)

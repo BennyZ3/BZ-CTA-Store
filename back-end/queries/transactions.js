@@ -23,6 +23,7 @@ const newTransaction = async (username, productID, quantity) => {
 const addToCart = async (username, productID, quantity) => {
   try {
     const today = new Date();
+    // might take date out of this query, currently not used in the front
     const date = `${today.getFullYear()}-${
       today.getMonth() + 1
     }-${today.getDate()}`;
