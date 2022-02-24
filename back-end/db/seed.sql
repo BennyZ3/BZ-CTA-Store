@@ -38,7 +38,11 @@ true),
 ('test',
 'test@test.org', 
 'test', 
-false);
+false),
+('admin',
+'admin@admin.org',
+'admin',
+true);
 
 INSERT INTO transactions (user_id, product_id, transaction_complete, date) VALUES
 ('bennyz', 1, true,'2022-02-01'),
