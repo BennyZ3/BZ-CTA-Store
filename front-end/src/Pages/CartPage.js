@@ -72,7 +72,7 @@ const CartPage = () => {
           })}
         </tbody>
       </table>
-      <h2>Total: {cartTotal}</h2>
+      <h2>Total: ${cartTotal.toFixed(2)}</h2>
     </div>
   );
 };
