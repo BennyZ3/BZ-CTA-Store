@@ -16,7 +16,6 @@ const CartPage = () => {
       });
   }, [API]);
   const handleDelete = (event) => {
-    // console.log(event.target.value);
     axios.delete(`${API}/transactions/${event.target.value}`).then(
       () => {
         console.log(`deleted transaction ${event.target.value}`);
@@ -25,7 +24,7 @@ const CartPage = () => {
       (error) => console.warn(error)
     );
   };
-
+  // accumulator for total
   let cartTotal = 0;
   return (
     <div className="cartPage">
@@ -43,6 +42,7 @@ const CartPage = () => {
         <tbody>
           {cart.map((product) => {
             if (product.inventory > 0) {
+              // pricing only the items in stock
               cartTotal += Number(product.price);
             }
             return (

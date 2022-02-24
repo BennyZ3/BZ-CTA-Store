@@ -10,15 +10,14 @@ const Login = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    //get request do not let you send info up with xml http, so swapping to post and responding like get
     await axios
       .post(`${API}/users`, user)
       .then((response) => {
         if (response.data.success) {
-          // console.log("success");
           document.cookie = `username=${user.username}`;
           window.location.reload(true);
         } else {
-          // console.log("fail");
           alert("Invalid username of password");
         }
       })
