@@ -34,8 +34,6 @@ products.get("/:id", async (request, response) => {
   }
 });
 
-// Admin verification tbd
-
 products.post("/", async (request, response) => {
   console.log(`POST request to products`);
   const item = await newProduct(request.body);

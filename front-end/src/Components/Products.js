@@ -4,6 +4,7 @@ import Product from "./Product";
 
 function Products(props) {
   const API = process.env.REACT_APP_API_URL;
+  //ternary used to use the component for 2 pages
   const callAPI = props.featured
     ? API + "/products/featured"
     : API + "/products";

@@ -15,10 +15,11 @@ import CartPage from "./Pages/CartPage";
 import RegistrationForm from "./Components/RegistrationForm";
 
 function App() {
-  console.log(document.cookie);
+  // console.log(document.cookie);
   const API = process.env.REACT_APP_API_URL;
   const [admin, setAdmin] = useState({});
   useEffect(() => {
+    // Check for cookie containing existing username and if it is an admin account
     axios
       .post(`${API}/users/admin`, { username: document.cookie.split("=")[1] })
       .then((response) => {
