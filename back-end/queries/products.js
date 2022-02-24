@@ -28,6 +28,7 @@ const getFeatured = async () => {
 };
 
 // Admin Only Functions
+
 const newProduct = async (product) => {
   let { name, description, price, rating, featured, image, inventory } =
     product;

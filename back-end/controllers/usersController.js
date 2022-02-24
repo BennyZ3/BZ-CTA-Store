@@ -12,9 +12,9 @@ const users = express.Router();
 users.post("/", async (request, response) => {
   console.log(`Login check for ${request.body.username}`);
   //login
-  console.log(request.body.username);
   const userInfo = await getUser(request.body.username);
   //   console.log("userInfo", userInfo);
+  // password check
   if (request.body.password === userInfo.password) {
     console.log("accepted");
     response
@@ -40,6 +40,7 @@ users.post("/cart", async (request, response) => {
   console.log(`cart info for user ${request.body.username}`);
   const cart = await getUserCart(request.body.username);
   //   console.log("cartinfo", cart);
+  // response making use of filter because query was having issue with variable input
   response.status(200).json({
     success: true,
     payload: cart.filter((item) => item.user_id === request.body.username),
@@ -47,12 +48,11 @@ users.post("/cart", async (request, response) => {
 });
 
 users.post("/new", async (request, response) => {
-  console.log(request.body);
+  console.log(`check for username ${request.body.username}`);
   const usernameCheck = await getUser(request.body.username);
-  console.log(usernameCheck.received);
+  // check if username exists
   if (!usernameCheck.received) {
     const newUser = await registerUser(request.body);
-    console.log(newUser);
     if (newUser.username) {
       response.status(200).json({ success: true, payload: newUser });
     } else {
