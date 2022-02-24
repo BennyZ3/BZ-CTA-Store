@@ -24,10 +24,8 @@ const Form = (props) => {
         setProduct(response.data.payload);
       });
     }
-    // else {
-    //   setProduct({ ...product });
-    // }
   }, [API, id, edit]);
+
 
   const handleChange = (event) => {
     if (event.target.id === "featured") {
