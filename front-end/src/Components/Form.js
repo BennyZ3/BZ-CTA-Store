@@ -23,10 +23,11 @@ const Form = (props) => {
       axios.get(`${API}/products/${id}`).then((response) => {
         setProduct(response.data.payload);
       });
-    } else {
-      setProduct({ ...product });
     }
-  }, [API, id]);
+    // else {
+    //   setProduct({ ...product });
+    // }
+  }, [API, id, edit]);
 
   const handleChange = (event) => {
     if (event.target.id === "featured") {
