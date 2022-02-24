@@ -1,0 +1,16 @@
+.productForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.productForm input {
+  height: 20px;
+  width: 300px;
+  margin-bottom: 5px;
+}
+
+.productForm button {
+  margin-left: 25px;
+}

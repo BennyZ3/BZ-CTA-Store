@@ -2,7 +2,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   height: 100px;
-  background-color: #1a1a1a;
+  background-color: #040404;
   border-bottom: 1px solid #44d62b;
   padding-bottom: 15px;
   /* padding-top: 15px; */
@@ -24,6 +24,10 @@ nav div {
 .navUser {
   display: grid;
   grid-template-columns: 1fr;
+}
+
+.Login {
+  margin-top: 10px;
 }
 
 .Login form {
@@ -48,5 +52,6 @@ nav div {
   grid-template-columns: 1fr 1fr;
 }
 
-.logout {
+.loggedIn {
+  margin-top: -15px;
 }

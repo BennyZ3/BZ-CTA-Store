@@ -32,7 +32,32 @@ a {
 }
 button {
   width: 150px;
+  height: 30px;
+  border: 1px solid #44d62b;
+  background: none;
+  color: #44d62b;
+  border-radius: 5px;
 }
-/* div {
-  border: 1px solid black;
-} */
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+h1:hover,
+h4:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+.cartPage {
+  margin-left: 40px;
+  padding-top: 30px;
+  margin-right: 40px;
+}
+
+table {
+  width: 100%;
+}

@@ -5,3 +5,9 @@
 td {
   border-bottom: 1px solid #44d62b;
 }
+
+.Home h2 {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 5px;
+}

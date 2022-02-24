@@ -4,7 +4,7 @@ import Login from "./Login";
 import Cart from "./Cart";
 import "./Nav.css";
 
-function NavBar() {
+function NavBar(props) {
   const [user, setUser] = useState({});
   useEffect(() => {
     setUser({ username: document.cookie.split("=")[1] });
@@ -28,16 +28,18 @@ function NavBar() {
             <h1>All Items</h1>
           </div>
         </Link>
-        <Link to="/products/new">
-          <div>
-            <button>New Item</button>
-          </div>
-        </Link>
+        {props.admin.admin && (
+          <Link to="/products/new">
+            <div>
+              <button>New Item</button>
+            </div>
+          </Link>
+        )}
       </div>
       {/* Login /register*/}
       <div className="navUser">
         {user.username ? (
-          <div>
+          <div className="loggedIn">
             <h4>User: {user.username}</h4>
             <button className="logout" onClick={handleLogout}>
               Logout
