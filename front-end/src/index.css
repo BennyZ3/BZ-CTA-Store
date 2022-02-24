@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #252525;
 }
 
 code {
@@ -18,7 +19,8 @@ main {
   margin-left: 7.5%;
   margin-right: 7.5%;
   background-color: #111111;
-  height: 800px;
+  padding-bottom: 30px;
+  /* height: 800px; */
 }
 .App {
   justify-content: center;
